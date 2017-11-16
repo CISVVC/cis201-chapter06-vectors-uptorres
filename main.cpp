@@ -107,13 +107,6 @@ void Balance::print()
 
 double Balance::get_avg()
 {
-	double b_sum = 0.0;
-	for(int day = 0; day < balance.size(); day++)
-	{
-	 b_sum += balance[day];
-	}
-	
-	return b_sum/
 }
 
 double Balance::get_min()
