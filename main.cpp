@@ -1,9 +1,9 @@
-/*
+/**
 * File: main.cpp
 * Developer: Erick Torres
 * Email: erickt@rocketmail.com
 * Description: This is the second submission of homework Project P6.13, after it was re-opened to submit.
-*/
+**/
 #include<iostream>
 #include<string>
 #include<vector>
@@ -51,11 +51,6 @@ void Transaction::read()
     	std::getline(std::cin,description);
 }
 
-void print_transactions(const std::vector<Transaction> t)
-{
-    	for(int i=0;i<t.size();i++)
-        t[i].print();
-}
 
 class Balance
 {
@@ -110,6 +105,7 @@ void Balance::print()
 	std::cout<< "Your minimum daily balance is: " << std::setprecision(2)<< std::fixed << std::setw(8) << min << std::endl;
 	
 	std::cout<< "Your daily average balance is: " << std::setw(8) << avg << std::endl;
+	std::cout<< "Your total interest is: " << int_total << std::endl;
 }
 
 //this function finds the average by adding all balances stored and dividing by total inputed.
@@ -143,9 +139,8 @@ void Balance::calc_daily()
 
 void Balance::calc_int()
 {
+	 balances[29] = balance;
 	 int_total = balance * I;
-	 balance += int_total;
- 	 balances[29] = balance;
 }
 
 //this function finds the smallest balance in vector
@@ -180,6 +175,7 @@ int main()
 	b.calc_daily();
 	b.calc_avg();
 	b.calc_min();
+	b.calc_int();
 	b.print();
  return 0;
 }
